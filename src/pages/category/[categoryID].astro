@@ -7,9 +7,10 @@ import BotonHome from '../../UI/BotonHome.astro'
 import LayoutContainer from "../../components/LayoutContainer.astro";
 import Layout from "../../layouts/Layout.astro";
 
-interface TFilter {
+export interface TFilter {
   id: number | string;
     categories: number[];
+    name?:string
 }
 
 export function getStaticPaths() {
@@ -21,7 +22,7 @@ export function getStaticPaths() {
 }
 const { categoryID } = Astro.params;
 
-const showData :TFilter[] | undefined = allCategoryMovies.find(info => info.id == categoryID);
+const showData  = allCategoryMovies != undefined && allCategoryMovies.find(info => info.id == categoryID);
 
 const searchedByCategory: TFilter[] = allDataDownloaded.map(data => ({id:data.id,categories:data.genre_ids}))
 const filterMoreDeep:TFilter[] = searchedByCategory.filter(data => ( data.categories.find(category => category == categoryID) ))
