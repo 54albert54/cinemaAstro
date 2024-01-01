@@ -1,8 +1,17 @@
 ---
+interface Tdata {
+  id:number
+    name:string
+}
+export interface Info {
+  category:Tdata[]
+    
+  
+}
 import LayoutContainer from "./LayoutContainer.astro";
-import { allCategoryMovies} from '../utils/useProvider'
+import { allCategoryMovies } from '../utils/useProvider'
 
-const data = allCategoryMovies;
+const miDAta:Tdata[] = allCategoryMovies as Tdata[] ;
 
 
 
@@ -11,7 +20,7 @@ const data = allCategoryMovies;
 <LayoutContainer styles="my-10 px-1">
   <section class="w-full flex flex-wrap gap-3 justify-center ">
    {
-    data.map(category=>(
+    miDAta.map((category: Tdata)=>(
       <a href={`/category/${category.id}`} class="py-2 w-36 text-center text-nowrap transition-all duration-300 ease-in relative px-4 border rounded-xl shadow-black shadow-md  bg-primary font-nomal text-white hover:top-1 hover:bg-primaryHover "> {category.name}</a>
     ) )
    }

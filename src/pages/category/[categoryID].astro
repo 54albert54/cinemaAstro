@@ -1,5 +1,5 @@
 ---
-import type { TMovie } from "../../utils/useProvider";
+
 import { allCategoryMovies ,allDataDownloaded } from "../../utils/useProvider";
 import ShowDataSections from '../../components/ShowDataSections.astro'
 import BotonHome from '../../UI/BotonHome.astro'
@@ -7,24 +7,27 @@ import BotonHome from '../../UI/BotonHome.astro'
 import LayoutContainer from "../../components/LayoutContainer.astro";
 import Layout from "../../layouts/Layout.astro";
 
+interface TFilter {
+  id: number | string;
+    categories: number[];
+}
+
 export function getStaticPaths() {
   //  return ([{params:{category:12}}])
 
   return allCategoryMovies?.map((rep) => ({
-    params: { category: rep.id },
+    params: { categoryID: rep.id },
   }));
 }
-const { category } = Astro.params;
+const { categoryID } = Astro.params;
 
-const showData = allCategoryMovies.find((info) => info.id == category);
+const showData :TFilter[] | undefined = allCategoryMovies.find(info => info.id == categoryID);
 
-const searchedByCategory = allDataDownloaded.map(data => ({id:data.id,categories:data.genre_ids}))
-const filterMoreDeep = searchedByCategory.filter(data => ( data.categories.find(cate => cate == category) ))
+const searchedByCategory: TFilter[] = allDataDownloaded.map(data => ({id:data.id,categories:data.genre_ids}))
+const filterMoreDeep:TFilter[] = searchedByCategory.filter(data => ( data.categories.find(category => category == categoryID) ))
 const odersResults = allDataDownloaded.filter(allData => { 
   return  filterMoreDeep.find(imtem => imtem.id ==allData.id ) })
 
-//(data => data.genre_ids.filter(cat => cat == category) )
-console.log('searchedByCategory',odersResults.length);
 
 
 ---
