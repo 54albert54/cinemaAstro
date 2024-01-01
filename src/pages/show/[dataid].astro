@@ -1,0 +1,59 @@
+---
+import type { TMovie } from "../../utils/useProvider.ts";
+import { dataMovies, IMG_PATH , allDataDownloaded } from "../../utils/useProvider";
+
+import LayoutContainer from "../../components/LayoutContainer.astro";
+import Layout from "../../layouts/Layout.astro";
+import BotonHome from "../../UI/BotonHome.astro";
+
+export function getStaticPaths() {
+  // return ([{params:{dataid:848326}}])
+
+  return allDataDownloaded?.map((rep) => ({
+    params: { dataid: rep.id },
+  }));
+}
+const { dataid } = Astro.params;
+
+const showData: TMovie = allDataDownloaded.find((info) => info.id == dataid);
+
+---
+
+<Layout title="Welcome to Astro.">
+  <LayoutContainer styles=" text-white       ">
+    <figure class=" absolute w-full h-[1200px] sm:h-[800px] py-10 opacity-60">
+      <img
+      
+        class="w-full h-full   object-cover  rounded-2xl overflow-hidden"
+        src={IMG_PATH + showData.backdrop_path}
+        alt=""
+      />
+    </figure>
+    <section class="relative z-20 p-10 pt-16 sm:p-20">
+      <div class="flex flex-col sm:flex-row sm:gap-10">
+        <figure
+          class="overflow-hidden  w-[360px] h-[400px] text-center text-nowrap transition-all duration-300 ease relative border rounded-xl  shadow-black shadow-md bg-primary font-nomal text-white  "
+        >
+          <img  src={IMG_PATH + showData.poster_path} alt="" />
+
+          <!-- backdrop_path -->
+        </figure>
+        <div class="flex flex-col sm:w-1/2">
+          <div class="flex flex-col justify-start gap-1 sm:gap-3">
+            <p class="font-semibold text-4xl">{showData?.title}</p>
+            <p class="font-semibold text-4xl">{showData?.name}</p>
+            <div>
+              <p>Fecha{showData.release_date}  {showData?.first_air_date} </p>  
+              <p class="  capitalize" >{showData.media_type}</p> 
+             
+            </div>
+          </div>
+          <div>
+            <p class="h-[200px] overflow-auto">{showData.overview}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <BotonHome stiles="relative z-30 top-2 sm:top-60"/>
+  </LayoutContainer>
+</Layout>

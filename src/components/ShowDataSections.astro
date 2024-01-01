@@ -1,0 +1,60 @@
+---
+import type  { TMovie  }from '../utils/useProvider'
+import   { IMG_PATH }from '../utils/useProvider'
+export interface Props{
+  data:TMovie[]
+  title:string
+}
+import LayoutContainer from "./LayoutContainer.astro";
+const { data ,title } = Astro.props
+
+
+---
+<section class="group relative w-screen">
+  <p class=" text-white font-semibold text-3xl ml-6 sm:ml-16 ">{title}</p>
+  <LayoutContainer styles="cont2 container my-10 px-6  overflow-x-scroll  mt-0   px-6 py-10">
+  <section class="w-full notice grid grid-rows-2 grid-flow-col   gap-6 ">
+    {
+     data.map(movie=>(
+     
+       <a href={`/show/`+movie.id} class=" overflow-hidden w-48 text-center text-nowrap transition-all duration-300 ease relative  border rounded-xl shadow-black shadow-md  bg-primary font-nomal text-white hover:scale-110 hover:relative hover:-translate-y-4 hover:z-30 hover:bg-primaryHover "> 
+          <img src={IMG_PATH+movie.poster_path} alt=""/>
+         
+         </a>
+     ) )
+   } 
+   </section>
+
+  
+
+</LayoutContainer>
+
+
+</section>
+
+  <style>
+
+
+@media screen and (min-width:450px) {
+  
+
+    .container:{
+      padding: 1rem;
+      background-color: red;
+    }
+
+    .container::-webkit-scrollbar {
+      
+    width: 12px; 
+}
+.container::-webkit-scrollbar-thumb {
+    background-color: #3498db; 
+    width: 12px;
+    border-radius: 6px;
+}
+.container::-webkit-scrollbar-track {
+  border-radius: 6px;
+    background-color: #ecf0f2; 
+}
+}
+  </style>

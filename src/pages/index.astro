@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import HeroBanner from "../components/HeroBanner.tsx";
+import type { TMovie}from '../utils/useProvider.ts'
+import {IMG_PATH ,dataTv ,dataMovies}from '../utils/useProvider.ts'
+import HerorBanerAstro from "../components/HerorBanerAstro.astro";
+import LayoutContainer from "../components/LayoutContainer.astro";
+import CategorySecction from "../components/CategorySecction.astro";
+import ShowDataSections from "../components/ShowDataSections.astro";
+
+const data:TMovie[] = dataMovies
+const dataTV:TMovie[] = dataTv
+const imageMovie = data.map(movie =>({img:IMG_PATH+ movie.poster_path, id:movie.id}))
+
+
+
+
+---
+
+<Layout title="Welcome to Astro.">
+	<HerorBanerAstro client:visible  allimg={imageMovie} />
+	<!-- <HeroBanner  client:visible allimg={imageMovie}/> -->
+
+	<CategorySecction/>
+	<ShowDataSections  title="Recomended for you"  data={data}/>
+	<ShowDataSections  title="TV Shows" data={dataTV}/>
+<!-- <LayoutContainer styles=" ">
+{
+	data.map(movie =>(
+		<p>{movie.title}</p>
+	))
+}
+</LayoutContainer> -->
+</Layout>
+
+<style>
+
+</style>

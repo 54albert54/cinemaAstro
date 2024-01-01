@@ -1,0 +1,55 @@
+---
+import HomeIcon from '../../public/icons/HomeIcon.astro'
+
+
+const navegatiosLinks =[
+  {
+    name:'Home',
+    icon:''
+  }, {
+    name:'Search',
+    icon:HomeIcon
+  },
+  {
+    name:'Dectails',
+    icon:HomeIcon
+  },
+  {
+    name:'Originals',
+    icon:HomeIcon
+  },
+  {
+    name:'Movies',
+    icon:HomeIcon
+  },
+  {
+    name:'Series',
+    icon:HomeIcon
+  },
+ 
+]
+---
+
+<nav class="  sticky sm:relative top-0 z-50 flex flex-row w-screen max-w-[1440px] mx-auto px-8 items-center h-[70px] justify-between bg-[#090B13] text-white mb-6">
+  <section class="flex items-center flex-row">
+  <div class="flex flex-row gap-6" >
+    <a href="/">home</a>
+    <a href="/show">show</a>
+    
+  </div>
+  <ul class="sm:flex flex-row w-auto gap-6 ml-8 hidden">
+  
+   {
+    navegatiosLinks.map(link =>(
+      <li ><a class="flex flex-row items-center text-[14px]  gap-3 " href="#">
+        <HomeIcon class="size-4"/>
+         {link.name}
+        </a></li>
+    ))
+   }
+  </ul>
+</section>
+<div>
+
+  <a class=" border  bg-primaryHover border-white py-2 px-4 rounded-lg right-8" href="#"> Log In</a>
+</nav>

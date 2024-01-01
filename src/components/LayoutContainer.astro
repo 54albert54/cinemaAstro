@@ -1,0 +1,7 @@
+--- 
+const { styles } =Astro.props
+---
+<section {...Astro.props} class={`min-h-20 w-scree max-w-[1440px] mx-auto relative ${styles}`}>
+  
+  <slot/>
+</section>

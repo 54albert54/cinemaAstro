@@ -1,0 +1,46 @@
+---
+import type { TMovie } from "../../utils/useProvider";
+import { allCategoryMovies ,allDataDownloaded } from "../../utils/useProvider";
+import ShowDataSections from '../../components/ShowDataSections.astro'
+import BotonHome from '../../UI/BotonHome.astro'
+
+import LayoutContainer from "../../components/LayoutContainer.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  //  return ([{params:{category:12}}])
+
+  return allCategoryMovies?.map((rep) => ({
+    params: { category: rep.id },
+  }));
+}
+const { category } = Astro.params;
+
+const showData = allCategoryMovies.find((info) => info.id == category);
+
+const searchedByCategory = allDataDownloaded.map(data => ({id:data.id,categories:data.genre_ids}))
+const filterMoreDeep = searchedByCategory.filter(data => ( data.categories.find(cate => cate == category) ))
+const odersResults = allDataDownloaded.filter(allData => { 
+  return  filterMoreDeep.find(imtem => imtem.id ==allData.id ) })
+
+//(data => data.genre_ids.filter(cat => cat == category) )
+console.log('searchedByCategory',odersResults.length);
+
+
+---
+<Layout title="Welcome to Astro.">
+  <LayoutContainer styles=" text-white overflow-hidden    mb-60">
+<section>
+  {odersResults.length == 0 ? (<p class=" text-white font-semibold text-3xl ml-6 sm:ml-16 "> No resltados</p>
+    <BotonHome/>
+    
+    ):
+  (<ShowDataSections  title={`Resultados de ${showData?.name}`}  data={odersResults}/>
+
+  <BotonHome stiles="relative bottom-20"/>
+
+  )}
+</section>
+
+</LayoutContainer>
+</Layout>
