@@ -1,6 +1,6 @@
 # CINEMA ASTRO
 
-MovieFlix es una aplicación web diseñada para ofrecer una experiencia similar a la de plataformas de transmisión populares como Netflix y Disney Plus. Explora una amplia selección de películas y disfruta de una interfaz atractiva y fácil de usar.
+Cinema Astro es una aplicación web diseñada para ofrecer una experiencia similar a la de plataformas de transmisión populares como Netflix y Disney Plus. Explora una amplia selección de películas y disfruta de una interfaz atractiva y fácil de usar.
 [Pagina Web][s]
 
 ## Capturas de Pantalla
