@@ -34,7 +34,7 @@ const showData: TMovie = allDataDownloaded.find((info) => info.id == dataid);
         <figure
           class="overflow-hidden  w-[360px] h-[400px] text-center text-nowrap transition-all duration-300 ease relative border rounded-xl  shadow-black shadow-md bg-primary font-nomal text-white  "
         >
-          <img  src={IMG_PATH + showData.poster_path} alt="" />
+          <img  src={IMG_PATH + showData.poster_path} alt={showData?.title} />
 
           <!-- backdrop_path -->
         </figure>

@@ -4,15 +4,6 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     
-      "compilerOptions": {
-        "noEmit": true,        /* No compilar los archivos de TypeScript en JavaScript */
-        "skipLibCheck": true,  /* Evitar la comprobación de librerías de definiciones de tipos */
-        "noImplicitAny": false  /* No mostrar errores si se usan 'any' implícitamente */
-      },
-      "include": [
-        "src/**/*.ts"         /* Rutas a tus archivos TypeScript */
-      ]
-    }
-  
+  },
   
 }

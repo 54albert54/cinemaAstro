@@ -5,26 +5,15 @@ import HomeIcon from '../../public/icons/HomeIcon.astro'
 const navegatiosLinks =[
   {
     name:'Home',
-    icon:''
-  }, {
-    name:'Search',
-    icon:HomeIcon
-  },
-  {
-    name:'Dectails',
-    icon:HomeIcon
-  },
-  {
-    name:'Originals',
-    icon:HomeIcon
+    path:'/'
   },
   {
     name:'Movies',
-    icon:HomeIcon
+    path:'/out-of-services'
   },
   {
     name:'Series',
-    icon:HomeIcon
+    path:'/out-of-services'
   },
  
 ]
@@ -32,8 +21,10 @@ const navegatiosLinks =[
 
 <nav class="  sticky sm:relative top-0 z-50 flex flex-row w-screen max-w-[1440px] mx-auto px-8 items-center h-[70px] justify-between bg-[#090B13] text-white mb-6">
   <section class="flex items-center flex-row">
-  <div class="flex flex-row gap-6" >
-    <a href="/">home</a>
+  <div class="flex sm:hidden  flex-row gap-6" >
+    <a class="flex justify-center gap-4" href="/"> 
+      <HomeIcon class="size-6"/>
+      home</a>
     
     
   </div>
@@ -41,15 +32,19 @@ const navegatiosLinks =[
   
    {
     navegatiosLinks.map(link =>(
-      <li ><a class="flex flex-row items-center text-[14px]  gap-3 " href="#">
-        <HomeIcon class="size-4"/>
+      <li class=" group" ><a class="flex flex-row items-center text-[14px] w-12  gap-3" href={link.path}>
+      
          {link.name}
-        </a></li>
+        </a>
+
+        <div class="bg-white w-0  h-1 group-hover:w-full transition-all duration-300 ease-linear rounded-lg"></div>
+        
+        </li>
     ))
    }
   </ul>
 </section>
 <div>
 
-  <a class=" border  bg-primaryHover border-white py-2 px-4 rounded-lg right-8" href="#"> Log In</a>
+  <a class=" border  bg-primaryHover border-white py-2 px-4 rounded-lg right-8" href="/login"> Log In</a>
 </nav>

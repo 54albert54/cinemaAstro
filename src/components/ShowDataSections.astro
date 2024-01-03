@@ -11,7 +11,10 @@ const { data ,title } = Astro.props
 
 ---
 <section class="group relative w-screen">
-  <p class=" text-white font-semibold text-3xl ml-6 sm:ml-16 ">{title}</p>
+  <div class=" max-w-[1260px] mx-auto h-5 pl-8"> 
+
+    <p class=" text-white font-semibold text-3xl mdl-6 sm:mdl-16 ">12{title}</p>
+  </div>
   <LayoutContainer styles="cont2 container my-10 px-6  overflow-x-scroll  mt-0   px-6 py-10">
   <section class="w-full notice grid grid-rows-2 grid-flow-col   gap-6 ">
     {
@@ -40,7 +43,7 @@ const { data ,title } = Astro.props
 
     .container:{
       padding: 1rem;
-      background-color: red;
+      
     }
 
     .container::-webkit-scrollbar {

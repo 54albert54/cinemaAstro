@@ -1,54 +1,52 @@
-# Astro Starter Kit: Basics
+# CINEMA ASTRO
 
-```sh
-npm create astro@latest -- --template basics
-```
+MovieFlix es una aplicación web diseñada para ofrecer una experiencia similar a la de plataformas de transmisión populares como Netflix y Disney Plus. Explora una amplia selección de películas y disfruta de una interfaz atractiva y fácil de usar.
+[Pagina Web][s]
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Capturas de Pantalla
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[![desktop](https://pbs.twimg.com/media/GC4zWErWgAAs0hY?format=jpg&name=medium "desktop")](https://pbs.twimg.com/media/GC4zWErWgAAs0hY?format=jpg&name=medium "desktop")
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+[![](https://pbs.twimg.com/media/GC4zWEvXYAAVuQW?format=jpg&name=medium)](https://pbs.twimg.com/media/GC4zWEvXYAAVuQW?format=jpg&name=medium)
+<!-- Agrega más capturas de pantalla según sea necesario -->
 
-## 🚀 Project Structure
+## Características
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Interfaz Atractiva:** Inspirada en el diseño elegante y funcional de plataformas como Netflix y Disney Plus.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Exploración Intuitiva:** Navega fácilmente a través de categorías, descubre nuevas películas y disfruta de una experiencia de usuario fluida.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Detalles de Películas:** Obtén información detallada sobre cada película, incluidos trailers, elenco y sinopsis.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **Funciones de Usuario:** Crea una cuenta, guarda tus películas favoritas y lleva un seguimiento de tu historial de visualización.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Instalación
 
-## 🧞 Commands
+1. Clona este repositorio:
 
-All commands are run from the root of the project, from a terminal:
+   ```bash
+   git clone https://github.com/54albert54/cinemaAstro.git
+   cd movieview
+   npm install
+   npm run dev
+   ```
+   
+## Uso
+-**Explora**  las películas en la página de inicio.
+-Haz clic en una película para ver detalles y reproducir el trailer.
+-Crea una cuenta para acceder a funciones adicionales.
+-Marca películas como favoritas y lleva un historial de visualización.
+##Tecnologías Utilizadas
+Astro: Construcción de sitios web estáticos y de alto rendimiento.
+Tailwind CSS: Utilidad de clases para diseño.
+React: Biblioteca para construir interfaces de usuario.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+##Contribuciones
+¡Contribuciones son bienvenidas! Acompañame esta nueva aventura.
 
-## 👀 Want to learn more?
+##Licencia
+Este proyecto está bajo la Licencia MIT - consulta el archivo LICENSE.md para más detalles.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+[s]: https://astro-movie.netlify.app "web"
+[s]: https://astro-movie.netlify.app "web"

@@ -1,0 +1,67 @@
+---
+export interface Props {
+  allimg:Data[]
+}
+interface Data {
+  id:number
+  img:string
+  title:string
+}
+
+const { allimg } = Astro.props 
+
+
+
+---
+
+<section class="group mb-8 w-scren max-w-[1440px] mx-auto">
+  <section
+    class="container pb-12 relative cont  barnerContainer flex  gap-6 flex-row overflow-x-scroll sm:overflow-hiddden mx-auto group"
+  >
+    {
+      allimg?.map((data) => (
+        <a  href={`/show/`+data.id}>
+        <figure id="cont" class=" min-w-[400px] h-auto overflow-hidden px-5  ">
+          <img class="   object-cover rounded-2xl" src={data?.img} alt={data?.title} />
+        </figure>
+      </a>
+      ))
+    }
+  </section>
+
+
+</section>
+
+
+<style>
+  .dots{
+    transition: 3s ease linear ;
+  }
+ 
+
+
+@media screen and (min-width:450px) {
+  
+
+    .container:{
+      padding: 1rem;
+      
+    }
+
+    .container::-webkit-scrollbar {
+      
+    width: 12px; 
+}
+.container::-webkit-scrollbar-thumb {
+    background-color: #3498db; 
+    width: 12px;
+    border-radius: 6px;
+}
+.container::-webkit-scrollbar-track {
+  
+  border-radius: 6px;
+    background-color: #ecf0f2; 
+}
+}
+  
+</style>

@@ -35,8 +35,14 @@ const odersResults = allDataDownloaded.filter(allData => {
 <Layout title="Welcome to Astro.">
   <LayoutContainer styles=" text-white overflow-hidden    mb-60">
 <section>
-  {odersResults.length == 0 ? (<p class=" text-white font-semibold text-3xl ml-6 sm:ml-16 "> No resltados</p>
+  {odersResults.length == 0 ? (
+    <div class="flex flex-col justify-center">
+    <p class=" text-white font-semibold text-3xl ml-6  text-center sm:ml-16 "> No resltados</p>
+
+      <img src="https://media.tenor.com/GaifEv50tYEAAAAM/travolta-empty.gif" alt="Meme"/>
+
     <BotonHome/>
+  </div>
     
     ):
   (<ShowDataSections  title={`Resultados de ${showData?.name}`}  data={odersResults}/>
