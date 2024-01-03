@@ -41,10 +41,10 @@ Astro: Construcción de sitios web estáticos y de alto rendimiento.
 Tailwind CSS: Utilidad de clases para diseño.
 React: Biblioteca para construir interfaces de usuario.
 
-##Contribuciones
+## Contribuciones
 ¡Contribuciones son bienvenidas! Acompañame esta nueva aventura.
 
-##Licencia
+## Licencia
 Este proyecto está bajo la Licencia MIT - consulta el archivo LICENSE.md para más detalles.
 
 
